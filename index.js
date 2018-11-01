@@ -8,7 +8,7 @@ const template = `
     <title>{{ title }}</title>
   </head>
   <body>
-    <h1>{{ message }}</h1>
+    <h1>わたしは{{ message }}がたべたい！</h1>
   </body>
 </html>
 `
@@ -16,7 +16,7 @@ const template = `
 const data = {
   filename: 'xiaolongbao.html',
   title: 'おなかすいた',
-  message: 'しょーろんぽーたべたい'
+  message: 'しょーろんぽー'
 }
 
 const result = hogan.compile(template).render(data)
