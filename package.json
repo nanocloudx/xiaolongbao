@@ -1,12 +1,12 @@
 {
   "name": "xiaolongbao",
   "version": "1.0.0",
-  "description": "",
+  "description": "しょーろんぽーじぇねれーたー",
   "main": "index.js",
   "scripts": {
     "generate": "node ./index"
   },
-  "author": "",
+  "author": "nanocloudx <nanocloudx@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "hogan.js": "^3.0.2"
