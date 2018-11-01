@@ -11,7 +11,8 @@ const template = `
     <title>{{ title }}</title>
   </head>
   <body>
-    <h1>わたしは{{ menu }}がたべたい！</h1>
+    <h1>{{ title }}</h1>
+    <p>わたしは{{ menu }}がたべたい！</p>
   </body>
 </html>
 `
@@ -32,8 +33,6 @@ const data = [
   }
 ]
 
-console.log('-------------------------')
-console.log('- Xiaolongbao generator -')
 console.log('-------------------------')
 data.forEach(item => {
   const result = hogan.compile(template).render(item)
