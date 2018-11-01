@@ -1,6 +1,9 @@
 const fs = require('fs')
 const hogan = require('hogan.js')
 
+/**
+ * テンプレートをこねこねします
+ */
 const template = `
 <!DOCTYPE html>
 <html lang="ja">
@@ -8,16 +11,33 @@ const template = `
     <title>{{ title }}</title>
   </head>
   <body>
-    <h1>わたしは{{ message }}がたべたい！</h1>
+    <h1>わたしは{{ menu }}がたべたい！</h1>
   </body>
 </html>
 `
 
-const data = {
-  filename: 'xiaolongbao.html',
-  title: 'おなかすいた',
-  message: 'しょーろんぽー'
-}
+/**
+ * データをこねこねします
+ */
+const data = [
+  {
+    filename: 'harapeko.html',
+    title: 'はらぺこ',
+    menu: 'しょーろんぽー'
+  },
+  {
+    filename: 'onakasuita.html',
+    title: 'おなかすいた',
+    menu: 'ぎょうざ'
+  }
+]
 
-const result = hogan.compile(template).render(data)
-fs.writeFileSync(`./dist/${data.filename}`, result)
+console.log('-------------------------')
+console.log('- Xiaolongbao generator -')
+console.log('-------------------------')
+data.forEach(item => {
+  const result = hogan.compile(template).render(item)
+  fs.writeFileSync(`./dist/${item.filename}`, result)
+  console.log(`- ${item.filename}`)
+})
+console.log('-------------------------\n')
